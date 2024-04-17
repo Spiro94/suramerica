@@ -15,6 +15,22 @@ class BaseScreen extends StatefulWidget {
 
 class _BaseScreenState extends State<BaseScreen> {
   final scrollController = ScrollController();
+  final imageList = const [
+    AssetImage('assets/images/carousel-1.jpg'),
+    AssetImage('assets/images/carousel-2.jpg'),
+    AssetImage('assets/images/carousel-3.jpg'),
+  ];
+
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      for (final image in imageList) {
+        precacheImage(image, context);
+      }
+    });
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
