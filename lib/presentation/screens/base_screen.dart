@@ -2,9 +2,11 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:suramerica/core/keys.dart';
+import 'package:sliver_tools/sliver_tools.dart';
+import 'package:suramerica/presentation/widgets/app_bar.dart';
 import 'package:suramerica/presentation/widgets/main_carousel.dart';
 import 'package:suramerica/presentation/widgets/tourism_section.dart';
+import 'package:suramerica/presentation/widgets/who_are_we_section.dart';
 
 class BaseScreen extends StatefulWidget {
   const BaseScreen({Key? key}) : super(key: key);
@@ -37,29 +39,23 @@ class _BaseScreenState extends State<BaseScreen> {
     return Scaffold(
       extendBodyBehindAppBar: false,
       body: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            floating: true,
-            title: const Text("SliverAppBar Example"),
-            actions: [
-              TextButton(
-                  onPressed: () {
-                    final context = tourismSectionKey.currentContext;
-                    if (context != null) {
-                      Scrollable.ensureVisible(context,
-                          duration: const Duration(seconds: 1), alignment: 0.5);
-                    }
-                  },
-                  child: const Text('Turismo')),
+        controller: scrollController,
+        slivers: [
+          SliverStack(
+            children: <Widget>[
+              SliverList(
+                delegate: SliverChildListDelegate(
+                  [
+                    const MainCarousel(),
+                    const WhoAreWeSection(),
+                    const TourismSection(),
+                  ],
+                ),
+              ),
+              MainAppBar(
+                scrollController: scrollController,
+              ),
             ],
-          ),
-          SliverList(
-            delegate: SliverChildListDelegate(
-              [
-                const MainCarousel(),
-                const TourismSection(),
-              ],
-            ),
           ),
         ],
       ),

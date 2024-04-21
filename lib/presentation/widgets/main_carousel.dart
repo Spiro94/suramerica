@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:suramerica/core/strings.dart';
 
 class MainCarousel extends StatefulWidget {
   const MainCarousel({Key? key}) : super(key: key);
@@ -18,12 +17,12 @@ class _MainCarouselState extends State<MainCarousel> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    final size = MediaQuery.sizeOf(context);
     return Stack(
       children: [
         FlutterCarousel(
           options: CarouselOptions(
-            height: size.height - kToolbarHeight,
+            height: size.height,
             showIndicator: true,
             slideIndicator: const CircularSlideIndicator(),
             enableInfiniteScroll: true,
@@ -56,31 +55,32 @@ class _MainCarouselState extends State<MainCarousel> {
         Container(
           width: size.width * 0.45,
           padding: const EdgeInsets.only(left: 68),
-          height: size.height - kToolbarHeight,
+          height: size.height,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'TU AVENTURA',
+              const Text(
+                SuramericaStrings.yourAdventure,
                 style: TextStyle(
-                  fontFamily: 'MontserratBold',
+                  fontFamily: 'Montserrat',
                   fontWeight: FontWeight.w900,
                   fontSize: 30,
                   color: Colors.white,
                 ),
               ),
-              Text(
-                'COMIENZA AQUÍ',
+              const Text(
+                SuramericaStrings.beginsHere,
                 style: TextStyle(
-                  fontFamily: 'MontserratBold',
+                  fontFamily: 'Montserrat',
                   fontSize: 60,
                   color: Colors.white,
+                  fontWeight: FontWeight.w900,
                 ),
               ),
               const Gap(100),
               Text(
-                'PROGRAMA TUS VACACIONES',
+                SuramericaStrings.programYourVacations,
                 style: TextStyle(
                   fontFamily: GoogleFonts.oswald().fontFamily,
                   fontWeight: FontWeight.normal,
@@ -88,16 +88,54 @@ class _MainCarouselState extends State<MainCarousel> {
                   color: Colors.white,
                 ),
               ),
-              Gap(16),
-              Text(
-                'Nos adaptamos a tus necesidades con planes flexibles y ajustables para que tu viaje sea perfecto. ¡Viaja con seguridad y confianza, mientras te aseguramos la diversión',
+              const Gap(16),
+              const Text(
+                SuramericaStrings.weAdapt,
                 style: TextStyle(
                   fontFamily: 'BrandonGrotesque',
-                  // fontWeight: FontWeight.normal,
                   fontSize: 25,
                   color: Colors.white,
                   height: 1,
                 ),
+              ),
+              const Gap(24),
+              Row(
+                children: [
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF008c82),
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 32, vertical: 16),
+                        shape: const ContinuousRectangleBorder(),
+                      ),
+                      onPressed: () {},
+                      child: const Text(
+                        SuramericaStrings.contact,
+                        style: TextStyle(
+                            fontSize: 17,
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.w700),
+                      )),
+                  const Gap(16),
+                  ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        foregroundColor: const Color(0xFFCF5A2C),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 32, vertical: 16),
+                        shape: const ContinuousRectangleBorder(
+                          side: BorderSide(color: Color(0xFFCF5A2C), width: 1),
+                        ),
+                      ),
+                      onPressed: () {},
+                      child: const Text(
+                        SuramericaStrings.portfolio,
+                        style: TextStyle(
+                            fontSize: 17,
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.w700),
+                      )),
+                ],
               )
             ],
           ),

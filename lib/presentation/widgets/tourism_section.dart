@@ -13,7 +13,7 @@ class TourismSection extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Container(
       key: tourismSectionKey,
-      padding: const EdgeInsets.all(24),
+      margin: const EdgeInsets.only(top: 48, left: 48, right: 48),
       height: size.height,
       child: Column(
         children: [
