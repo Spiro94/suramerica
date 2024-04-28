@@ -1,12 +1,10 @@
-// ignore_for_file: avoid_web_libraries_in_flutter, unsafe_html
-
-import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:suramerica/core/colors.dart';
 import 'package:suramerica/core/strings.dart';
+import 'package:suramerica/core/utils.dart';
 import 'package:suramerica/presentation/widgets/who_are_we_text.dart';
 
 class WhoAreWeSection extends StatelessWidget {
@@ -74,10 +72,7 @@ class WhoAreWeSection extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      html.window.open(
-                        'assets/portfolio/pdf-test.pdf',
-                        'Portafolio',
-                      );
+                      openPDFInNewTab('portfolio/pdf-test.pdf');
                     },
                     child: const Text(
                       SuramericaStrings.downloadPortfolio,

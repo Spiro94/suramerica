@@ -1,12 +1,10 @@
-// ignore_for_file: avoid_web_libraries_in_flutter, unsafe_html
-
-import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:suramerica/core/strings.dart';
+import 'package:suramerica/core/utils.dart';
 
 class MainCarousel extends StatefulWidget {
   const MainCarousel({super.key});
@@ -143,10 +141,7 @@ class _MainCarouselState extends State<MainCarousel> {
                       ),
                     ),
                     onPressed: () {
-                      html.window.open(
-                        'assets/portfolio/pdf-test.pdf',
-                        'Portafolio',
-                      );
+                      openPDFInNewTab('portfolio/pdf-test.pdf');
                     },
                     child: const Text(
                       SuramericaStrings.portfolio,
