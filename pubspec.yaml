@@ -1,5 +1,5 @@
 name: suramerica
-description: "A new Flutter project."
+description: A Flutter-based web app for Suramerica Tours, offering a platform to explore, book, and manage national and international tours. Features include tour browsing, multilingual support, and an intuitive booking interface.
 publish_to: 'none'
 version: 0.1.0
 
