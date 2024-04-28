@@ -1,3 +1,6 @@
+// ignore_for_file: avoid_web_libraries_in_flutter, unsafe_html
+
+import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
@@ -7,13 +10,18 @@ import 'package:suramerica/core/strings.dart';
 import 'package:suramerica/presentation/widgets/who_are_we_text.dart';
 
 class WhoAreWeSection extends StatelessWidget {
-  const WhoAreWeSection({Key? key}) : super(key: key);
+  const WhoAreWeSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      margin: const EdgeInsets.only(top: 48, left: 48, right: 48),
+      padding: const EdgeInsets.only(
+        top: 48,
+        left: 48,
+        right: 48,
+        bottom: 48,
+      ),
       height: MediaQuery.sizeOf(context).height,
       child: Row(
         children: [
@@ -21,6 +29,7 @@ class WhoAreWeSection extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 48),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SvgPicture.asset('assets/images/suramerica-logo-big.svg'),
                   Text(
@@ -40,6 +49,7 @@ class WhoAreWeSection extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 48),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const WhoAreWeText(),
                   const Gap(64),
@@ -48,36 +58,40 @@ class WhoAreWeSection extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'BrandonGrotesque',
                       fontSize: 30,
-                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   const Gap(8),
                   FilledButton(
-                      style: ButtonStyle(
-                        foregroundColor:
-                            MaterialStateProperty.all(Colors.white),
-                        backgroundColor:
-                            MaterialStateProperty.all(SuramericaColors.orange),
-                        padding: MaterialStateProperty.all(
-                          const EdgeInsets.symmetric(
-                            horizontal: 48,
-                            vertical: 16,
-                          ),
+                    style: ButtonStyle(
+                      foregroundColor: MaterialStateProperty.all(Colors.white),
+                      backgroundColor:
+                          MaterialStateProperty.all(SuramericaColors.orange),
+                      padding: MaterialStateProperty.all(
+                        const EdgeInsets.symmetric(
+                          horizontal: 48,
+                          vertical: 16,
                         ),
                       ),
-                      onPressed: () {},
-                      child: const Text(
-                        'Descarga portafolios',
-                        style: TextStyle(
-                          fontFamily: 'BrandonGrotesque',
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      )),
+                    ),
+                    onPressed: () {
+                      html.window.open(
+                        'assets/portfolio/pdf-test.pdf',
+                        'Portafolio',
+                      );
+                    },
+                    child: const Text(
+                      SuramericaStrings.downloadPortfolio,
+                      style: TextStyle(
+                        fontFamily: 'BrandonGrotesque',
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

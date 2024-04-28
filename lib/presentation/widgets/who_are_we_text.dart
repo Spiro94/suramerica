@@ -9,7 +9,7 @@ const TextStyle textStyle = TextStyle(
 );
 
 class WhoAreWeText extends StatelessWidget {
-  const WhoAreWeText({Key? key}) : super(key: key);
+  const WhoAreWeText({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class WhoAreWeText extends StatelessWidget {
         ),
         TextSpan(
           text: SuramericaStrings.weAre1,
-          style: textStyle.copyWith(fontWeight: FontWeight.bold),
+          style: textStyle.copyWith(fontWeight: FontWeight.w600),
         ),
         const TextSpan(
           text: SuramericaStrings.weAre2,
@@ -30,7 +30,7 @@ class WhoAreWeText extends StatelessWidget {
         ),
         TextSpan(
           text: SuramericaStrings.weAre3,
-          style: textStyle.copyWith(fontWeight: FontWeight.bold),
+          style: textStyle.copyWith(fontWeight: FontWeight.w600),
         ),
         const TextSpan(
           text: SuramericaStrings.weAre4,
@@ -38,13 +38,13 @@ class WhoAreWeText extends StatelessWidget {
         ),
         TextSpan(
           text: SuramericaStrings.weAre5,
-          style: textStyle.copyWith(fontWeight: FontWeight.bold),
+          style: textStyle.copyWith(fontWeight: FontWeight.w600),
         ),
         const TextSpan(
           text: SuramericaStrings.weAre6,
           style: textStyle,
         ),
-      ]),
+      ],),
     );
   }
 }

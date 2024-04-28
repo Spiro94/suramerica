@@ -10,7 +10,7 @@ class SuramericaStrings {
   static const String beginsHere = 'COMIENZA AQUÍ';
   static const String programYourVacations = 'PROGRAMA TUS VACACIONES';
   static const String weAdapt =
-      'Nos adaptamos a tus necesidades con planes flexibles y ajustables para que tu viaje sea perfecto. ¡Viaja con seguridad y confianza, mientras te aseguramos la diversión.';
+      'Nos adaptamos a tus necesidades con planes flexibles y ajustables para que tu viaje sea perfecto. ¡Viaja con seguridad y confianza, mientras te aseguramos la diversión!';
   static const String contact = 'CONTACTO';
   static const String portfolio = 'PORTAFOLIO';
   static const String weAre = 'Somos una empresa de transporte y turismo con ';
@@ -24,4 +24,5 @@ class SuramericaStrings {
   static const String weAre6 =
       'nuestros clientes mientras exploran nuevos destinos y disfrutan de sus viajes';
   static const String checkOurPlans = 'Conoce nuestros planes';
+  static const String downloadPortfolio = 'Descargar portafolio';
 }

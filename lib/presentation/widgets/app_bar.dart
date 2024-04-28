@@ -6,14 +6,14 @@ const textStyle = TextStyle(
   color: Colors.white,
   fontFamily: 'BrandonGrotesque',
   fontSize: 18,
-  fontWeight: FontWeight.w700,
+  fontWeight: FontWeight.w600,
 );
 
 class MainAppBar extends StatelessWidget {
   const MainAppBar({
-    Key? key,
+    super.key,
     required this.scrollController,
-  }) : super(key: key);
+  });
 
   final ScrollController scrollController;
 
@@ -42,7 +42,7 @@ class MainAppBar extends StatelessWidget {
                   child: const Text(
                     SuramericaStrings.whoAreWe,
                     style: textStyle,
-                  )),
+                  ),),
               const Gap(16),
               TextButton(
                   onPressed: () {
@@ -51,21 +51,21 @@ class MainAppBar extends StatelessWidget {
                   child: const Text(
                     SuramericaStrings.tourism,
                     style: textStyle,
-                  )),
+                  ),),
               const Gap(16),
               TextButton(
                   onPressed: () {},
                   child: const Text(
                     SuramericaStrings.transport,
                     style: textStyle,
-                  )),
+                  ),),
               const Gap(16),
               TextButton(
                   onPressed: () {},
                   child: const Text(
                     SuramericaStrings.contactAppBar,
                     style: textStyle,
-                  )),
+                  ),),
             ],
           ),
         ),

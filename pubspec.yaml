@@ -15,12 +15,14 @@ dependencies:
   gap: ^3.0.1
   go_router: ^13.2.1
   google_fonts: ^6.2.1
+  lints: ^2.1.1
   sliver_tools: ^0.2.12
 
 dev_dependencies:
+  lint: ^2.3.0
+  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
@@ -37,8 +39,32 @@ flutter:
           weight: 900
     - family: BrandonGrotesque
       fonts:
-        - asset: fonts/brandon-grotesque-light-58a8a4b38001d.otf
-        - asset: fonts/brandon-grotesque-regular-italic-58a8a456c4724.otf
-          style: italic
-        - asset: fonts/brandon-grotesque-black-58a8a3e824392.otf
-          weight: 900
+      - asset: fonts/Brandon_reg.otf
+      - asset: fonts/Brandon_reg_it.otf
+        style: italic
+      - asset: fonts/Brandon_med.otf
+        weight: 500
+      - asset: fonts/Brandon_med_it.otf
+        weight: 500
+        style: italic
+      - asset: fonts/Brandon_bld.otf
+        weight: 700
+      - asset: fonts/Brandon_bld_it.otf
+        weight: 700
+        style: italic
+      - asset: fonts/Brandon_light.otf
+        weight: 300
+      - asset: fonts/Brandon_light_it.otf
+        weight: 300
+        style: italic
+      - asset: fonts/Brandon_thin.otf
+        weight: 100
+      - asset: fonts/Brandon_thin_it.otf
+        weight: 100
+        style: italic
+      - asset: fonts/Brandon_blk.otf
+        weight: 900
+      - asset: fonts/Brandon_blk_it.otf
+        weight: 900
+        style: italic
+      
