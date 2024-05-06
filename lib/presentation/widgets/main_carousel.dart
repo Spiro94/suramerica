@@ -45,7 +45,7 @@ class _MainCarouselState extends State<MainCarousel> {
           child: Opacity(
             opacity: 0.9,
             child: SvgPicture.asset(
-              'assets/images/main-bg.svg', //TODO: Crop the image
+              'images/main-bg-1.svg',
               width: size.width * 0.55,
               height: size.height,
               fit: BoxFit.fitHeight,

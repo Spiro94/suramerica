@@ -25,4 +25,10 @@ class SuramericaStrings {
       'nuestros clientes mientras exploran nuevos destinos y disfrutan de sus viajes';
   static const String checkOurPlans = 'Conoce nuestros planes';
   static const String downloadPortfolio = 'Descargar portafolio';
+  static const String transportDescription = '''
+Dentro de las principales categorias del servicio de transporte tenemos: Escolar , Empresarial, Turístico, de Salud y Receptivos. Con más de 20 años de experiencia en el mercado, SURAMÉRICA S.A.S ofrece traslados y desplazamientos con atención y calidad humana, puntualidad, responsabilidad, respeto y eficiencia.
+
+Nuestro Objetivo es siempre brindar un excelente y cordial servicio a nuestros pasajeros, desde el Ejecutivo hasta grupos familiares y/o empresariales. Nuestro personal, altamente calificado , cuenta con rigurosos procesos de selección y verificación de perfiles, formación y capacitación continua para ofrecerles una experiencia agradable en sus destinos.
+''';
+  static const String requestService = 'Solicita tu servicio';
 }

@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:suramerica/core/colors.dart';
-import 'package:suramerica/core/strings.dart';
-import 'package:suramerica/core/utils.dart';
 import 'package:suramerica/presentation/widgets/who_are_we_text.dart';
 
 class WhoAreWeSection extends StatelessWidget {
@@ -30,59 +26,18 @@ class WhoAreWeSection extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SvgPicture.asset('assets/images/suramerica-logo-big.svg'),
-                  Text(
-                    SuramericaStrings.tourism.toUpperCase(),
-                    style: TextStyle(
-                      fontFamily: GoogleFonts.oswald().fontFamily,
-                      fontWeight: FontWeight.w900,
-                      fontSize: 160,
-                      color: SuramericaColors.orange.withOpacity(0.05),
-                    ),
-                  ),
                 ],
               ),
             ),
           ),
-          Expanded(
+          const Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 48),
+              padding: EdgeInsets.symmetric(horizontal: 48),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const WhoAreWeText(),
-                  const Gap(64),
-                  const Text(
-                    SuramericaStrings.checkOurPlans,
-                    style: TextStyle(
-                      fontFamily: 'BrandonGrotesque',
-                      fontSize: 30,
-                    ),
-                  ),
-                  const Gap(8),
-                  FilledButton(
-                    style: ButtonStyle(
-                      foregroundColor: MaterialStateProperty.all(Colors.white),
-                      backgroundColor:
-                          MaterialStateProperty.all(SuramericaColors.orange),
-                      padding: MaterialStateProperty.all(
-                        const EdgeInsets.symmetric(
-                          horizontal: 48,
-                          vertical: 16,
-                        ),
-                      ),
-                    ),
-                    onPressed: () {
-                      openPDFInNewTab('portfolio/pdf-test.pdf');
-                    },
-                    child: const Text(
-                      SuramericaStrings.downloadPortfolio,
-                      style: TextStyle(
-                        fontFamily: 'BrandonGrotesque',
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
+                  WhoAreWeText(),
+                  Gap(64),
                 ],
               ),
             ),

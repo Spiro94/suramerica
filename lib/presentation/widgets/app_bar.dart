@@ -36,36 +36,44 @@ class MainAppBar extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               TextButton(
-                  onPressed: () {
-                    _scrollToSection(context, 1);
-                  },
-                  child: const Text(
-                    SuramericaStrings.whoAreWe,
-                    style: textStyle,
-                  ),),
+                onPressed: () {
+                  _scrollToSection(context, 1);
+                },
+                child: const Text(
+                  SuramericaStrings.whoAreWe,
+                  style: textStyle,
+                ),
+              ),
               const Gap(16),
               TextButton(
-                  onPressed: () {
-                    _scrollToSection(context, 2);
-                  },
-                  child: const Text(
-                    SuramericaStrings.tourism,
-                    style: textStyle,
-                  ),),
+                onPressed: () {
+                  _scrollToSection(context, 2);
+                },
+                child: const Text(
+                  SuramericaStrings.tourism,
+                  style: textStyle,
+                ),
+              ),
               const Gap(16),
               TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    SuramericaStrings.transport,
-                    style: textStyle,
-                  ),),
+                onPressed: () {
+                  _scrollToSection(context, 3);
+                },
+                child: const Text(
+                  SuramericaStrings.transport,
+                  style: textStyle,
+                ),
+              ),
               const Gap(16),
               TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    SuramericaStrings.contactAppBar,
-                    style: textStyle,
-                  ),),
+                onPressed: () {
+                  _scrollToSection(context, 4);
+                },
+                child: const Text(
+                  SuramericaStrings.contactAppBar,
+                  style: textStyle,
+                ),
+              ),
             ],
           ),
         ),

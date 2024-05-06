@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sliver_tools/sliver_tools.dart';
 import 'package:suramerica/presentation/widgets/app_bar.dart';
+import 'package:suramerica/presentation/widgets/contact_us_section.dart';
 import 'package:suramerica/presentation/widgets/main_carousel.dart';
 import 'package:suramerica/presentation/widgets/tourism_section.dart';
+import 'package:suramerica/presentation/widgets/transport_section.dart';
 import 'package:suramerica/presentation/widgets/who_are_we_section.dart';
 
 class BaseScreen extends StatefulWidget {
@@ -48,6 +50,8 @@ class _BaseScreenState extends State<BaseScreen> {
                     const MainCarousel(),
                     const WhoAreWeSection(),
                     const TourismSection(),
+                    const TransportSection(),
+                    const ContactUsSection(),
                   ],
                 ),
               ),
