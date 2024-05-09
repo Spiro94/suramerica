@@ -35,7 +35,7 @@ class TransportSection extends StatelessWidget {
                   children: [1, 2, 3, 4, 5]
                       .map(
                         (e) => SvgPicture.asset(
-                          'images/interface-$e.svg',
+                          'assets/images/interface-$e.svg',
                           height: 75,
                         ),
                       )

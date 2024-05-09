@@ -68,7 +68,7 @@ class _MainCarouselState extends State<MainCarousel> {
           child: Opacity(
             opacity: 0.9,
             child: SvgPicture.asset(
-              'images/main-bg.svg',
+              'assets/images/main-bg.svg',
               width: size.width * 0.55,
               fit: BoxFit.fitHeight,
             ),
@@ -116,7 +116,7 @@ class _MainCarouselState extends State<MainCarousel> {
                           BoxShadow(
                             blurRadius: 10,
                             offset: Offset(2, 2),
-                          )
+                          ),
                         ],
                       ),
                     ),
