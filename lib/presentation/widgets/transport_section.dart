@@ -18,55 +18,25 @@ class TransportSection extends StatelessWidget {
           Text(
             SuramericaStrings.transport.toUpperCase(),
             style: TextStyle(
-                fontFamily: GoogleFonts.oswald().fontFamily,
-                fontWeight: FontWeight.w900,
-                fontSize: 160,
-                color: SuramericaColors.lightGreen.withOpacity(0.1),
-                height: 1.25,),
+              fontFamily: GoogleFonts.oswald().fontFamily,
+              fontWeight: FontWeight.w900,
+              fontSize: 160,
+              color: SuramericaColors.lightGreen.withOpacity(0.1),
+              height: 1.25,
+            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-                decoration: BoxDecoration(
-                  color: SuramericaColors.lightGreen,
-                  borderRadius: BorderRadius.circular(24),
-                ),
-                child: RichText(
-                  text: const TextSpan(
-                    text: 'Servicio de ',
-                    style: TextStyle(
-                      fontFamily: 'BrandonGrotesque',
-                      fontSize: 26,
-                      fontWeight: FontWeight.w300,
-                      color: Colors.white,
-                    ),
-                    children: [
-                      TextSpan(
-                        text: 'Transporte Especial',
-                        style: TextStyle(
-                          fontFamily: 'BrandonGrotesque',
-                          fontWeight: FontWeight.w600,
-                          fontSize: 26,
-                          fontStyle: FontStyle.italic,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                 child: Wrap(
                   children: [1, 2, 3, 4, 5]
                       .map(
                         (e) => SvgPicture.asset(
                           'images/interface-$e.svg',
-                          height: 60,
+                          height: 75,
                         ),
                       )
                       .toList(),
@@ -104,7 +74,7 @@ class TransportSection extends StatelessWidget {
                       children: [
                         Image.asset(
                           'assets/images/tourism.jpg',
-                          height: MediaQuery.sizeOf(context).height * 0.32,
+                          height: MediaQuery.sizeOf(context).height * 0.3,
                         ),
                         const Gap(24),
                         const Text(

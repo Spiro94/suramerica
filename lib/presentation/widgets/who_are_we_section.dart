@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:gap/gap.dart';
 import 'package:suramerica/presentation/widgets/who_are_we_text.dart';
 
 class WhoAreWeSection extends StatelessWidget {
@@ -16,7 +15,7 @@ class WhoAreWeSection extends StatelessWidget {
         right: 48,
         bottom: 48,
       ),
-      height: MediaQuery.sizeOf(context).height,
+      height: MediaQuery.sizeOf(context).height * 0.5,
       child: Row(
         children: [
           Expanded(
@@ -25,7 +24,10 @@ class WhoAreWeSection extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SvgPicture.asset('assets/images/suramerica-logo-big.svg'),
+                  SvgPicture.asset(
+                    'assets/images/suramerica-logo-big.svg',
+                    height: MediaQuery.sizeOf(context).height * 0.25,
+                  ),
                 ],
               ),
             ),
@@ -37,7 +39,6 @@ class WhoAreWeSection extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   WhoAreWeText(),
-                  Gap(64),
                 ],
               ),
             ),

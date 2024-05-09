@@ -21,33 +21,55 @@ class _MainCarouselState extends State<MainCarousel> {
     final size = MediaQuery.sizeOf(context);
     return Stack(
       children: [
-        FlutterCarousel(
-          options: CarouselOptions(
-            height: size.height,
-            enableInfiniteScroll: true,
-            viewportFraction: 1,
-          ),
-          items: [1, 2, 3].map((i) {
-            return Builder(
-              builder: (BuildContext context) {
-                return SizedBox(
-                  width: size.width,
-                  child: Image.asset(
-                    'assets/images/carousel-$i.jpg',
-                    fit: BoxFit.cover,
-                  ),
+        Stack(
+          children: [
+            FlutterCarousel(
+              options: CarouselOptions(
+                height: size.height,
+                enableInfiniteScroll: true,
+                viewportFraction: 1,
+              ),
+              items: [1, 2, 3].map((i) {
+                return Builder(
+                  builder: (BuildContext context) {
+                    return SizedBox(
+                      width: size.width,
+                      child: Image.asset(
+                        'assets/images/carousel-$i.jpg',
+                        fit: BoxFit.cover,
+                      ),
+                    );
+                  },
                 );
-              },
-            );
-          }).toList(),
+              }).toList(),
+            ),
+            Positioned(
+              bottom: 0,
+              child: Container(
+                height: size.height * 0.13,
+                width: size.width,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Colors.white.withOpacity(0.0),
+                      Colors.white.withOpacity(0.5),
+                      Colors.white.withOpacity(0.7),
+                      Colors.white,
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
         IgnorePointer(
           child: Opacity(
             opacity: 0.9,
             child: SvgPicture.asset(
-              'images/main-bg-1.svg',
+              'images/main-bg.svg',
               width: size.width * 0.55,
-              height: size.height,
               fit: BoxFit.fitHeight,
             ),
           ),
@@ -90,6 +112,12 @@ class _MainCarouselState extends State<MainCarousel> {
                         fontWeight: FontWeight.normal,
                         fontSize: 55,
                         color: Colors.white,
+                        shadows: const [
+                          BoxShadow(
+                            blurRadius: 10,
+                            offset: Offset(2, 2),
+                          )
+                        ],
                       ),
                     ),
                     const Gap(16),
@@ -98,6 +126,7 @@ class _MainCarouselState extends State<MainCarousel> {
                       style: TextStyle(
                         fontFamily: 'BrandonGrotesque',
                         fontSize: 25,
+                        fontWeight: FontWeight.w400,
                         color: Colors.white,
                         height: 1.25,
                       ),

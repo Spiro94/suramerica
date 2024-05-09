@@ -37,7 +37,7 @@ class MainAppBar extends StatelessWidget {
             children: [
               TextButton(
                 onPressed: () {
-                  _scrollToSection(context, 1);
+                  _scrollToSection(context, 0);
                 },
                 child: const Text(
                   SuramericaStrings.whoAreWe,
@@ -47,7 +47,7 @@ class MainAppBar extends StatelessWidget {
               const Gap(16),
               TextButton(
                 onPressed: () {
-                  _scrollToSection(context, 2);
+                  _scrollToSection(context, 1);
                 },
                 child: const Text(
                   SuramericaStrings.tourism,
@@ -57,7 +57,7 @@ class MainAppBar extends StatelessWidget {
               const Gap(16),
               TextButton(
                 onPressed: () {
-                  _scrollToSection(context, 3);
+                  _scrollToSection(context, 2);
                 },
                 child: const Text(
                   SuramericaStrings.transport,
@@ -67,7 +67,7 @@ class MainAppBar extends StatelessWidget {
               const Gap(16),
               TextButton(
                 onPressed: () {
-                  _scrollToSection(context, 4);
+                  _scrollToSection(context, 3);
                 },
                 child: const Text(
                   SuramericaStrings.contactAppBar,
@@ -83,7 +83,7 @@ class MainAppBar extends StatelessWidget {
 
   void _scrollToSection(BuildContext context, int page) {
     scrollController.animateTo(
-      MediaQuery.sizeOf(context).height * page,
+      MediaQuery.sizeOf(context).height * (page == 0 ? 1 : page + 0.65),
       duration: const Duration(seconds: 1),
       curve: Curves.easeInOut,
     );

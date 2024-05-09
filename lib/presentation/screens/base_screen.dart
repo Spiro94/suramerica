@@ -63,10 +63,16 @@ class _BaseScreenState extends State<BaseScreen> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
+        shape: const CircleBorder(),
+        backgroundColor: const Color(0xFF25D366),
+        foregroundColor: Colors.white,
         onPressed: () {
           log('Whatsapp');
         },
-        child: const FaIcon(FontAwesomeIcons.whatsapp),
+        child: const FaIcon(
+          FontAwesomeIcons.whatsapp,
+          size: 30,
+        ),
       ),
     );
   }
