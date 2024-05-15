@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sliver_tools/sliver_tools.dart';
 import 'package:suramerica/presentation/widgets/app_bar.dart';
 import 'package:suramerica/presentation/widgets/contact_us_section.dart';
+import 'package:suramerica/presentation/widgets/instagram_feed_section.dart';
 import 'package:suramerica/presentation/widgets/main_carousel.dart';
 import 'package:suramerica/presentation/widgets/tourism_section.dart';
 import 'package:suramerica/presentation/widgets/transport_section.dart';
@@ -51,6 +52,7 @@ class _BaseScreenState extends State<BaseScreen> {
                     const WhoAreWeSection(),
                     const TourismSection(),
                     const TransportSection(),
+                    const InstagramFeedSection(),
                     const ContactUsSection(),
                   ],
                 ),
