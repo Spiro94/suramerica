@@ -3,8 +3,10 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
+import 'package:url_launcher/url_launcher.dart';
 
 class InstagramFeedSection extends StatefulWidget {
   const InstagramFeedSection({super.key});
@@ -19,13 +21,13 @@ class _InstagramFeedSectionState extends State<InstagramFeedSection> {
   @override
   void initState() {
     super.initState();
-    fetchPosts();
+    // fetchPosts();
   }
 
   Future<void> fetchPosts() async {
     final response = await http.get(
       Uri.parse(
-        'https://graph.instagram.com/me/media?fields=id,media_type,media_url&access_token=IGQWROMTJnQVRpYUh4aEZASMVZACdzljMU9VNmh0enMzNjlBS1o1eVhMZA1hWWnJ5MndFU09PV2VxZA2JaajIxMXFZAcEp5aGhDRUhhcEt6d19keXdGS0s0c3FVaDJtOGFTT3dBOVd1dlZA4YUVqalFwRi02RTBEaEJsY2MZD',
+        'https://graph.instagram.com/me/media?fields=id,media_type,media_url&access_token=IGQWRPa0VhSmJwQTRpcmRFelpwS0VQY2V3QjZAURE0zemozZAHBIYzFVckFIUmZAHR2ZA5VVFORVBqRXVVX3VJR284OFhRdVNTc1p5OVR2dVRqelc5eDlaYTEzdEVnOTZATdThsUUJod3U3MV9pQjBwZAXh4M1R4X3BIWncZD',
       ),
     );
     final data = jsonDecode(response.body);
@@ -54,7 +56,7 @@ class _InstagramFeedSectionState extends State<InstagramFeedSection> {
 
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 58),
-      height: size.height,
+      height: size.height * 0.7,
       child: Column(
         children: [
           Expanded(
@@ -67,8 +69,9 @@ class _InstagramFeedSectionState extends State<InstagramFeedSection> {
               ),
             ),
           ),
+          const Gap(16),
           SizedBox(
-            height: size.height * 0.8,
+            height: size.height * 0.45,
             child: GridView.builder(
               physics: const NeverScrollableScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -77,11 +80,16 @@ class _InstagramFeedSectionState extends State<InstagramFeedSection> {
                 crossAxisSpacing: spacing,
                 mainAxisSpacing: spacing,
               ),
-              itemCount: imageUrls.length,
+              itemCount: 3,
               itemBuilder: (context, index) {
-                return Image.network(
-                  imageUrls[index],
-                  fit: BoxFit.fitHeight,
+                return GestureDetector(
+                  onTap: () {
+                    launchUrl(Uri.parse('https://instagram.com/suramerica'));
+                  },
+                  child: Image.asset(
+                    'assets/images/insta${index + 1}.jpg',
+                    fit: BoxFit.fitHeight,
+                  ),
                 );
               },
             ),
