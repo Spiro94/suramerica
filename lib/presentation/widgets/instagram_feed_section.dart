@@ -25,7 +25,7 @@ class _InstagramFeedSectionState extends State<InstagramFeedSection> {
   Future<void> fetchPosts() async {
     final response = await http.get(
       Uri.parse(
-        'https://graph.instagram.com/me/media?fields=id,media_type,media_url&access_token=IGQWRNOHBtWDNXVXpsbFNhTHZAmTXU3R2VYNUt1bXY0RDZAOUkRVcXFZATTZAxYnlNTlVNb3Y0R2ZAyQUZAKRU1BVEZASczA5ZAmtOVGNUNlBGMjlYTkVIeUpjMFdlQmFCVDNoeWxSQlItcmNYSHNER0Q5SDFyNVhMXzdhd0kZD',
+        'https://graph.instagram.com/me/media?fields=id,media_type,media_url&access_token=IGQWROMTJnQVRpYUh4aEZASMVZACdzljMU9VNmh0enMzNjlBS1o1eVhMZA1hWWnJ5MndFU09PV2VxZA2JaajIxMXFZAcEp5aGhDRUhhcEt6d19keXdGS0s0c3FVaDJtOGFTT3dBOVd1dlZA4YUVqalFwRi02RTBEaEJsY2MZD',
       ),
     );
     final data = jsonDecode(response.body);
